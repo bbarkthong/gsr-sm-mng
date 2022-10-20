@@ -27,7 +27,8 @@ public class UserService {
     }
 
     @Transactional
-    public void saveUserById(User user) {
+    public void save(User user) {
+        // TODO: 저장 구현
     }
 
 }

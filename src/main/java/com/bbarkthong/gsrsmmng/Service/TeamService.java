@@ -1,7 +1,6 @@
 package com.bbarkthong.gsrsmmng.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ public class TeamService {
 
     private final TeamRepository teamRepository;
 
-    public List<Team> findItemsByName(String team_nm) {
+    public List<Team> findTeams() {
         return teamRepository.findAll();
     }
 
@@ -27,8 +26,7 @@ public class TeamService {
     }
 
     @Transactional
-    public void saveTeamById(String team_id, Map<String, Object> params) {
-        // Team team = Team.builder().teamId(team_id).build();
-        // teamRepository.save(team);
+    public void saveTeam(Team team) {
+        // TODO: 저장 구현
     }
 }

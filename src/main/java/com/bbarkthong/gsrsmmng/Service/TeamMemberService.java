@@ -23,15 +23,18 @@ public class TeamMemberService {
     }
 
     public Optional<TeamMember> findByTeam(String teamId) {
+        // TODO: 팀으로 조회하도록 구현
         return teamMemberService.findById(teamId);
     }
 
     public Optional<TeamMember> findByUser(String userId) {
+        // TODO: 사람으로 조회하도록 구현
         return teamMemberService.findById(userId);
     }
 
     @Transactional
     public void save(TeamMember user) {
+        // TODO: 저장 구현
     }
 
 }
