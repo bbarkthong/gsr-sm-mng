@@ -1,10 +1,11 @@
 package com.bbarkthong.gsrsmmng.Entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -55,15 +56,14 @@ public class Team {
     private String teamViewEndDt;
 
     // 등록자ID
-    private String regiUserId;
+    protected String regiUserId;
 
     // 등록일시
-    private Timestamp regiDttm;
+    protected Timestamp regiDttm;
 
     // 최종수정자ID
-    private String finalModUserId;
+    protected String finalModUserId;
 
     // 최종수정일시
-    private Timestamp finalModDttm;
-
+    protected Timestamp finalModDttm;
 }

@@ -31,9 +31,4 @@ public class TeamService {
         // Team team = Team.builder().teamId(team_id).build();
         // teamRepository.save(team);
     }
-
-    public void reset(List<Team> initData) {
-        // teamRepository.deleteAll();
-        teamRepository.saveAll(initData);
-    }
 }
