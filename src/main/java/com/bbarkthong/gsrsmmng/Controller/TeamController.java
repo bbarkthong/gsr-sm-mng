@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bbarkthong.gsrsmmng.Entity.Team;
+import com.bbarkthong.gsrsmmng.Entity.TeamMember;
+import com.bbarkthong.gsrsmmng.Service.TeamMemberService;
 import com.bbarkthong.gsrsmmng.Service.TeamService;
 
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TeamController {
 
     private final TeamService teamService;
+    private final TeamMemberService teamMemberService;
 
     @GetMapping("/team")
     public List<Team> getTeam(@RequestParam Map<String, Object> params) {
@@ -43,5 +46,10 @@ public class TeamController {
     public void saveTeam(@PathVariable("team_id") String team_id, @RequestParam Map<String, Object> params) {
         log.debug(params.toString());
         teamService.saveTeamById(team_id, params);
+    }
+
+    @GetMapping("/team/member")
+    public List<TeamMember> getTeamMember(@RequestParam Map<String, Object> params) {
+        return teamMemberService.getTeamMembers();
     }
 }

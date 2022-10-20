@@ -1,6 +1,6 @@
 package com.bbarkthong.gsrsmmng.Entity;
 
-import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,15 +15,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "MS_TEAM_MEMBER")
-public class TeamMember implements Serializable {
+public class TeamMember {
 
     @Id
-    // 팀ID
-    private String teamId;
-
-    @Id
-    // 일원ID
-    private String memberId;
+    private TeamMemberPK teamMemberPK;
 
     // 직무ID
     private String dutyId;
@@ -36,4 +31,16 @@ public class TeamMember implements Serializable {
 
     // 소속종료일
     private String assignEndDt;
+
+    // 등록자ID
+    protected String regiUserId;
+
+    // 등록일시
+    protected Timestamp regiDttm;
+
+    // 최종수정자ID
+    protected String finalModUserId;
+
+    // 최종수정일시
+    protected Timestamp finalModDttm;
 }
